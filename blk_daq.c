@@ -84,37 +84,40 @@ static int blk_daq_transfer(struct blk_daq_dev *dev, unsigned long sector,
 	my_printk("usb_daq: cmd_type %u, sector %llu, size %llu\n",
 			bdc->cmd_type, bdc->sector, bdc->size);
 
-	if (write) {
-		if (atomic_read(&(dev->aWrite)) == 1) {
-			atomic_set(&(dev->aWrite), 0);
-			bdc->cmd_type = BLK_DAQ_CMD_EXTERNAL_WRITE;
-			result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
-									bdc, sizeof(*bdc), NULL);
-		}
-		else {
-			result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
-						bdc, sizeof(*bdc), NULL);
+	if (write && atomic_read(&(dev->aWrite)) == 1)
+	{
+		atomic_set(&(dev->aWrite), 0);
+		bdc->cmd_type = BLK_DAQ_CMD_EXTERNAL_WRITE;
+	}
 
-			result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
-								buffer, nbytes, NULL);
+	result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
+										bdc, sizeof(*bdc), NULL);
+
+	switch (bdc->cmd_type) {
+	case BLK_DAQ_CMD_NORMAL_READ:
+		result = usb_daq_bulk_transfer_buf(ud, ud->recv_blk_bulk_pipe,
+							buffer, nbytes, NULL);
+		//memcpy(buffer, dev->data + offset, nbytes);
+		break;
+	case BLK_DAQ_CMD_NORMAL_WRITE:
+		result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
+							buffer, nbytes, NULL);
+		//memcpy(dev->data + offset, buffer, nbytes);
+		break;
+	case BLK_DAQ_CMD_EXTERNAL_WRITE:
+
+		break;
+	default:
+
+		break;
+	}
+
 //			for (i = 0; i < nbytes >> 2; i += 8) {
 //				if (i + 8 >= nbytes >> 2)
 //					break;
 //				my_printk("usb_daq: %08x %08x %08x %08x %08x %08x %08x %08x\n",
 //						pbt[i], pbt[i+1], pbt[i+2], pbt[i+3], pbt[i+4], pbt[i+5], pbt[i+6], pbt[i+7]);
 //			}
-		}
-	}
-		//memcpy(dev->data + offset, buffer, nbytes);
-	else
-	{
-		result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
-							bdc, sizeof(*bdc), NULL);
-
-		result = usb_daq_bulk_transfer_buf(ud, ud->recv_blk_bulk_pipe,
-							buffer, nbytes, NULL);
-	}
-		//memcpy(buffer, dev->data + offset, nbytes);
 
 	my_printk("usb_daq: Bulk command transfer result=%d\n", result);
 	if (result != USB_DAQ_XFER_GOOD)
