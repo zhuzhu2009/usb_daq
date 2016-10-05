@@ -452,7 +452,7 @@ exit:
 	return retval;
 }
 
-static ssize_t usb_daq_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
+static long usb_daq_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
 	struct usb_daq_data *ud;
 	int rv;
