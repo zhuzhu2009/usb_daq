@@ -464,13 +464,13 @@ static ssize_t usb_daq_ioctl(struct file *file, unsigned int cmd, unsigned long 
 
 	my_printk("usb_daq: blk_daq_ioctl cmd %#x, arg %#lx\n", cmd, arg);
 	switch (cmd) {
-		case BLK_DAQ_IOCTL_START_WRITE:
+		case IOCTL_BLK_DAQ_START_WRITE:
 			atomic_inc(&(ud->bd_dev.aWrite));
 			get_user(ud->bd_dev.ex_wr_size, pUser);
 			my_printk("usb_daq: blk_daq_ioctl inc %d, ex_wr_size %d\n",
 					atomic_read(&(ud->bd_dev.aWrite)), ud->bd_dev.ex_wr_size);
 			break;
-		case BLK_DAQ_IOCTL_STOP_WRITE:
+		case IOCTL_BLK_DAQ_STOP_WRITE:
 			//atomic_dec(&(dev->aWrite));
 			if (!atomic_dec_and_test(&(ud->bd_dev.aWrite)))
 			{

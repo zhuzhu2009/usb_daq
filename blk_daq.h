@@ -1,7 +1,7 @@
 /*
  * blk_daq.h
  *
- *  Created on: 2016å¹?æœ?æ—? *      Author: zhuce
+ *  Created on: 2016ï¿½?ï¿½?ï¿½? *      Author: zhuce
  */
 
 #ifndef BLK_DAQ_H_
@@ -61,6 +61,8 @@ struct blk_daq_dev {
 	struct timer_list timer;        /* For simulated media changes */
 
 	atomic_t aWrite;
+
+	unsigned long ex_wr_size;
 };
 
 extern int blk_daq_init(void);

@@ -54,7 +54,8 @@ struct usb_daq_data;
 #define UD_IOBUF_SIZE		64	/* Size of the DMA-mapped I/O buffer */
 
 
-
+#define IOCTL_BLK_DAQ_START_WRITE				_IOWR('x', 0, int)
+#define IOCTL_BLK_DAQ_STOP_WRITE				_IOWR('x', 1, int)
 
 typedef int (*trans_blk_send)(struct usb_daq_data*);
 typedef int (*trans_blk_recv)(struct usb_daq_data*);

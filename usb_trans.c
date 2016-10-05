@@ -143,7 +143,7 @@ int usb_daq_clear_halt(struct usb_daq_data *ud, unsigned int pipe)
 	if (result >= 0)
 		usb_reset_endpoint(ud->pusb_dev, endp);
 
-	usb_stor_dbg(ud, "result = %d\n", result);
+	my_printk("usb_daq: result = %d\n", result);
 	return result;
 }
 EXPORT_SYMBOL_GPL(usb_daq_clear_halt);
@@ -155,7 +155,7 @@ EXPORT_SYMBOL_GPL(usb_daq_clear_halt);
  * non-control endpoints, and translates the status to the corresponding
  * USB_DAQ_XFER_xxx return code.
  */
-static int interpret_urb_result(struct us_data *us, unsigned int pipe,
+static int interpret_urb_result(struct usb_daq_data *us, unsigned int pipe,
 		unsigned int length, int result, unsigned int partial)
 {
 	my_printk("usb_daq: Status code %d; transferred %u/%u\n",
@@ -194,12 +194,12 @@ static int interpret_urb_result(struct us_data *us, unsigned int pipe,
 
 	/* the transfer was cancelled by abort, disconnect, or timeout */
 	case -ECONNRESET:
-		usb_stor_dbg(us, "-- transfer cancelled\n");
+		my_printk("usb_daq: -- transfer cancelled\n");
 		return USB_DAQ_XFER_ERROR;
 
 	/* short scatter-gather read transfer */
 	case -EREMOTEIO:
-		usb_stor_dbg(us, "-- short read transfer\n");
+		my_printk("usb_daq: -- short read transfer\n");
 		return USB_DAQ_XFER_SHORT;
 
 	/* abort or disconnect in progress */
@@ -225,7 +225,7 @@ int usb_daq_bulk_transfer_buf(struct usb_daq_data *ud, unsigned int pipe,
 	/* fill and submit the URB */
 	usb_fill_bulk_urb(ud->current_urb, ud->pusb_dev, pipe, buf, length,
 		      usb_stor_blocking_completion, NULL);
-	result = usb_stor_msg_common(ud, 0);
+	result = usb_daq_msg_common(ud, 0);
 
 	/* store the actual length of the data transferred */
 	if (act_len)

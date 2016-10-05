@@ -4,8 +4,8 @@
  *  Created on: 2016�?�?3�? *      Author: zhuce
  */
 
-#ifndef USB_TRANSPORT_H_
-#define USB_TRANSPORT_H_
+#ifndef USB_TRANS_H_
+#define USB_TRANS_H_
 
 #include "usb_daq.h"
 
