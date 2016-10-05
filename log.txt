@@ -1,0 +1,257 @@
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800546] usb_daq: enter usb_daq_probe
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800550] usb_daq: Vendor: 0x9408, Product: 0x2802, Revision: 0x0200
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800552] usb_daq: Interface Subclass: 0x00, Protocol: 0x00
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800554] usb_daq: find endpoint 0x81.
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800555] usb_daq: find endpoint 0x01.
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800556] usb_daq: find endpoint 0x86.
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800557] usb_daq: find endpoint 0x02.
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800621] usb_daq 2-2:1.0: usb_daq: usb daq device now attached to usb_daq0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800623] usb_daq: bulk_in_size 64
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800626] usb_daq: rq=fe rqtype=c1 value=0000 index=00 len=12
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800738] usb_daq: usb_daq_get_dev_info, sect size 2048, nsect 64
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800740] usb_daq: enter blk_daq_init
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800741] usb_daq: exit blk_daq_init
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800743] usb_daq: enter blk_daq_add_device
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800830] usb_daq: dev_index 0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800936] usb_daq: enter blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800938] usb_daq: enter blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800940] usb_daq: exit blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800942] usb_daq: blk_daq_open users 1
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800943] usb_daq: exit blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800954] usb_daq: enter blk_daq_revalidate
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800956] usb_daq: exit blk_daq_revalidate
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800976] usb_daq: cmd_type 0, sector 0, size 2
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.800978] usb_daq: xfer 24 bytes
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.801022] usb_daq: status code 0; transferred 24/24
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.801023] usb_daq: -- transfer complete
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.801025] usb_daq: xfer 4096 bytes
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.939979] usb_daq: status code 0; transferred 4096/4096
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.939982] usb_daq: -- transfer complete
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.939983] usb_daq: Bulk command transfer result=0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.939993]  bda: bda1
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940097] usb_daq: enter blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940101] usb_daq: blk_daq_release users 0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940103] usb_daq: exit blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940160] usb_daq: exit blk_daq_add_device
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940161] usb_daq: exit usb_daq_probe
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940684] usb_daq: enter blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940687] usb_daq: enter blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940688] usb_daq: exit blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940689] usb_daq: blk_daq_open users 1
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940690] usb_daq: exit blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940965] usb_daq: enter blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940966] usb_daq: blk_daq_release users 0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.940968] usb_daq: exit blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941137] usb_daq: enter blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941140] usb_daq: enter blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941141] usb_daq: exit blk_daq_media_changed
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941143] usb_daq: blk_daq_open users 1
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941144] usb_daq: exit blk_daq_open
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941482] usb_daq: enter blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941485] usb_daq: blk_daq_release users 0
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941487] usb_daq: exit blk_daq_release
+Sep 21 20:51:53 zhuce-pc kernel: [ 5575.941997] usbcore: registered new interface driver usb_daq
+Sep 21 20:52:23 zhuce-pc kernel: [ 5606.056377] usb_daq: enter blk_daq_invalidate
+Sep 21 20:52:23 zhuce-pc kernel: [ 5606.056381] usb_daq: exit blk_daq_invalidate
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320819] usb_daq: enter blk_daq_open
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320824] usb_daq: enter blk_daq_media_changed
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320825] usb_daq: exit blk_daq_media_changed
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320827] usb_daq: blk_daq_open users 1
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320828] usb_daq: exit blk_daq_open
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320832] usb_daq: enter blk_daq_ioctl
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320834] usb_daq: blk_daq_ioctl cmd 0x5331, arg 0x0
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320837] usb_daq: enter blk_daq_release
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320838] usb_daq: blk_daq_release users 0
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320840] usb_daq: exit blk_daq_release
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320852] usb_daq: enter blk_daq_open
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320854] usb_daq: enter blk_daq_media_changed
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320857] usb_daq: exit blk_daq_media_changed
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320859] usb_daq: blk_daq_open users 1
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320861] usb_daq: exit blk_daq_open
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320893] usb_daq: enter blk_daq_get_geo
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320897] usb_daq: get_geo, heads 64, sectors 16, cylinders 512, start 0
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320899] usb_daq: exit blk_daq_get_geo
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320910] usb_daq: cmd_type 0, sector 0, size 2
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320912] usb_daq: xfer 24 bytes
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320955] usb_daq: status code 0; transferred 24/24
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320957] usb_daq: -- transfer complete
+Sep 21 20:53:38 zhuce-pc kernel: [ 5681.320959] usb_daq: xfer 4096 bytes
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.459842] usb_daq: status code 0; transferred 4096/4096
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.459854] usb_daq: -- transfer complete
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.459855] usb_daq: Bulk command transfer result=0
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.460009] usb_daq: enter blk_daq_release
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.460011] usb_daq: blk_daq_release users 0
+Sep 21 20:53:39 zhuce-pc kernel: [ 5681.460012] usb_daq: exit blk_daq_release
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614940] usb_daq: enter blk_daq_open
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614944] usb_daq: enter blk_daq_media_changed
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614946] usb_daq: exit blk_daq_media_changed
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614947] usb_daq: blk_daq_open users 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614948] usb_daq: exit blk_daq_open
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614968] usb_daq: cmd_type 0, sector 1, size 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.614970] usb_daq: xfer 24 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.615015] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.615016] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.615017] usb_daq: xfer 2048 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686055] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686057] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686059] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686064] EXT4-fs (bda1): mounting ext2 file system using the ext4 subsystem
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686070] usb_daq: cmd_type 0, sector 2, size 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.686071] usb_daq: xfer 24 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.688878] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.688880] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.688881] usb_daq: xfer 2048 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.759864] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.759867] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.759868] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.759983] usb_daq: cmd_type 0, sector 6, size 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.759984] usb_daq: xfer 24 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.762631] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.762634] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.762635] usb_daq: xfer 2048 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.833643] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.833645] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.833647] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.833653] usb_daq: cmd_type 0, sector 5, size 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.833654] usb_daq: xfer 24 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.836481] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.836483] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.836484] usb_daq: xfer 2048 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.907441] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.907443] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.907445] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.907460] usb_daq: cmd_type 1, sector 1, size 1
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.907461] usb_daq: xfer 24 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.910251] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.910253] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.910255] usb_daq: xfer 2048 bytes
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.985127] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.985130] usb_daq: -- transfer complete
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.985131] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:02 zhuce-pc kernel: [ 5704.985178] EXT4-fs (bda1): mounted filesystem without journal. Opts: (null)
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.264525] usb_daq: cmd_type 0, sector 18, size 1
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.264528] usb_daq: xfer 24 bytes
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.264574] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.264575] usb_daq: -- transfer complete
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.264576] usb_daq: xfer 2048 bytes
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.335662] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.335664] usb_daq: -- transfer complete
+Sep 21 20:54:45 zhuce-pc kernel: [ 5748.335665] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.554613] usb_daq: cmd_type 0, sector 3, size 1
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.554617] usb_daq: xfer 24 bytes
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.554685] usb_daq: status code 0; transferred 24/24
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.554687] usb_daq: -- transfer complete
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.554688] usb_daq: xfer 2048 bytes
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.625791] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.625797] usb_daq: -- transfer complete
+Sep 21 20:54:47 zhuce-pc kernel: [ 5749.625799] usb_daq: Bulk command transfer result=0
+Sep 21 20:54:50 zhuce-pc kernel: [ 5752.964631] usb_daq: enter usb_daq_open
+Sep 21 20:54:50 zhuce-pc kernel: [ 5752.964638] usb_daq: exit usb_daq_open
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.890121] usb_daq: cmd_type 1, sector 1, size 1
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.890124] usb_daq: xfer 24 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.890203] usb_daq: status code 0; transferred 24/24
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.890205] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.890206] usb_daq: xfer 2048 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.965120] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.965123] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.965124] usb_daq: Bulk command transfer result=0
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.965130] usb_daq: cmd_type 1, sector 2, size 1
+Sep 21 20:55:14 zhuce-pc kernel: [ 5776.965131] usb_daq: xfer 24 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.046034] usb_daq: status code 0; transferred 24/24
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.046037] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.046038] usb_daq: xfer 2048 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.120812] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.120818] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.120821] usb_daq: Bulk command transfer result=0
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.120841] usb_daq: cmd_type 1, sector 3, size 1
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.120844] usb_daq: xfer 24 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.201721] usb_daq: status code 0; transferred 24/24
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.201723] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.201725] usb_daq: xfer 2048 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.277250] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.277253] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.277255] usb_daq: Bulk command transfer result=0
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.277267] usb_daq: cmd_type 1, sector 5, size 1
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.277268] usb_daq: xfer 24 bytes
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.358131] usb_daq: status code 0; transferred 24/24
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.358133] usb_daq: -- transfer complete
+Sep 21 20:55:14 zhuce-pc kernel: [ 5777.358134] usb_daq: xfer 2048 bytes
+Sep 21 20:55:15 zhuce-pc kernel: [ 5777.433094] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:55:15 zhuce-pc kernel: [ 5777.433097] usb_daq: -- transfer complete
+Sep 21 20:55:15 zhuce-pc kernel: [ 5777.433099] usb_daq: Bulk command transfer result=0
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.442270] usb_daq: cmd_type 1, sector 16, size 1
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.442279] usb_daq: xfer 24 bytes
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.442367] usb_daq: status code 0; transferred 24/24
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.442369] usb_daq: -- transfer complete
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.442371] usb_daq: xfer 2048 bytes
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.517525] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.517527] usb_daq: -- transfer complete
+Sep 21 20:55:20 zhuce-pc kernel: [ 5782.517529] usb_daq: Bulk command transfer result=0
+Sep 21 20:55:23 zhuce-pc kernel: [ 5786.124689] usb_daq: enter usb_daq_ioctl
+Sep 21 20:55:23 zhuce-pc kernel: [ 5786.124692] usb_daq: blk_daq_ioctl cmd 0xc0087800, arg 0x0
+Sep 21 20:55:23 zhuce-pc kernel: [ 5786.124693] usb_daq: exit usb_daq_ioctl
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715073] usb_daq: cmd_type 1, sector 5, size 1
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715076] usb_daq: xfer 24 bytes
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715177] usb_daq: status code 0; transferred 24/24
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715179] usb_daq: -- transfer complete
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715181] usb_daq: Bulk command transfer result=0
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715202] usb_daq: cmd_type 1, sector 2, size 1
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.715203] usb_daq: xfer 24 bytes
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.801183] usb_daq: status code 0; transferred 24/24
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.801186] usb_daq: -- transfer complete
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.801187] usb_daq: Bulk command transfer result=0
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.801198] usb_daq: cmd_type 1, sector 3, size 1
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.801199] usb_daq: xfer 24 bytes
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.887282] usb_daq: status code 0; transferred 24/24
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.887285] usb_daq: -- transfer complete
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.887286] usb_daq: Bulk command transfer result=0
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.887303] usb_daq: cmd_type 1, sector 17, size 2
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.887304] usb_daq: xfer 24 bytes
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.973193] usb_daq: status code 0; transferred 24/24
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.973195] usb_daq: -- transfer complete
+Sep 21 20:56:42 zhuce-pc kernel: [ 5864.973196] usb_daq: Bulk command transfer result=0
+Sep 21 20:57:31 zhuce-pc kernel: [ 5913.672238] usb_daq: enter usb_daq_ioctl
+Sep 21 20:57:31 zhuce-pc kernel: [ 5913.672248] usb_daq: blk_daq_ioctl cmd 0xc0087801, arg 0x0
+Sep 21 20:57:31 zhuce-pc kernel: [ 5913.672253] usb_daq: exit usb_daq_ioctl
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961127] usb_daq: enter usb_daq_flush
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961137] usb_daq: enter usb_daq_draw_down
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961141] usb_daq: exit usb_daq_draw_down
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961143] usb_daq: exit usb_daq_flush
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961146] usb_daq: enter usb_daq_release
+Sep 21 20:57:43 zhuce-pc kernel: [ 5925.961153] usb_daq: exit usb_daq_release
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.804223] usb_daq: cmd_type 1, sector 5, size 1
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.804228] usb_daq: xfer 24 bytes
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.804315] usb_daq: status code 0; transferred 24/24
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.804317] usb_daq: -- transfer complete
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.804319] usb_daq: xfer 2048 bytes
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.879344] usb_daq: status code 0; transferred 2048/2048
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.879346] usb_daq: -- transfer complete
+Sep 21 20:58:37 zhuce-pc kernel: [ 5979.879347] usb_daq: Bulk command transfer result=0
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.546702] usb_daq: cmd_type 1, sector 1, size 1
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.546705] usb_daq: xfer 24 bytes
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.546778] usb_daq: status code 0; transferred 24/24
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.546779] usb_daq: -- transfer complete
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.546780] usb_daq: xfer 2048 bytes
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621923] usb_daq: status code 0; transferred 2048/2048
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621926] usb_daq: -- transfer complete
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621927] usb_daq: Bulk command transfer result=0
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621974] usb_daq: enter blk_daq_release
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621975] usb_daq: blk_daq_release users 0
+Sep 21 21:09:19 zhuce-pc kernel: [ 6621.621977] usb_daq: exit blk_daq_release
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.779225] usbcore: deregistering interface driver usb_daq
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.779239] usb_daq: enter usb_daq_disconnect
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.779240] usb_daq: enter blk_daq_del_device
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822748] usb_daq: exit blk_daq_del_device
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822751] usb_daq: enter blk_daq_exit
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822752] usb_daq: enter blk_daq_delete
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822753] usb_daq: exit blk_daq_delete
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822754] usb_daq: exit blk_daq_exit
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822879] usb_daq: enter usb_daq_delete
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822881] usb_daq: enter usb_stor_release_resources
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822882] usb_daq: -- sending exit command to thread
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822883] usb_daq: exit usb_stor_release_resources
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822884] usb_daq: enter dissociate_dev
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822886] usb_daq: exit dissociate_dev
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822887] usb_daq: exit usb_daq_delete
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822889] usb_daq 2-2:1.0: usb_daq: usb_daq #0 now disconnected
+Sep 21 21:09:29 zhuce-pc kernel: [ 6631.822890] usb_daq: exit usb_daq_disconnect
