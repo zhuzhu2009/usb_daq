@@ -1,7 +1,7 @@
 /*
- * usb_transport.c
+ * usb_trans.c
  *
- *  Created on: 2016å¹?æœ?3æ—? *      Author: zhuce
+ *  Created on: 2016ï¿½?ï¿½?3ï¿½? *      Author: zhuce
  */
 
 #include <linux/sched.h>
@@ -10,7 +10,7 @@
 #include <linux/export.h>
 
 #include "usb_daq.h"
-#include "usb_transport.h"
+#include "usb_trans.h"
 #include "my_printk.h"
 
 #include <linux/blkdev.h>
@@ -96,7 +96,7 @@ static int usb_daq_msg_common(struct usb_daq_data *ud, int timeout)
 
 /*
  * Transfer one control message, with timeouts, and allowing early
- * termination.  Return codes are usual -Exxx, *not* USB_STOR_XFER_xxx.
+ * termination.  Return codes are usual -Exxx, *not* USB_DAQ_XFER_xxx.
  */
 int usb_daq_control_msg(struct usb_daq_data *ud, unsigned int pipe,
 		 u8 request, u8 requesttype, u16 value, u16 index,
@@ -126,6 +126,114 @@ int usb_daq_control_msg(struct usb_daq_data *ud, unsigned int pipe,
 	return status;
 }
 EXPORT_SYMBOL_GPL(usb_daq_control_msg);
+
+int usb_daq_clear_halt(struct usb_daq_data *ud, unsigned int pipe)
+{
+	int result;
+	int endp = usb_pipeendpoint(pipe);
+
+	if (usb_pipein (pipe))
+		endp |= USB_DIR_IN;
+
+	result = usb_daq_control_msg(ud, ud->send_ctrl_pipe,
+		USB_REQ_CLEAR_FEATURE, USB_RECIP_ENDPOINT,
+		USB_ENDPOINT_HALT, endp,
+		NULL, 0, 3*HZ);
+
+	if (result >= 0)
+		usb_reset_endpoint(ud->pusb_dev, endp);
+
+	usb_stor_dbg(ud, "result = %d\n", result);
+	return result;
+}
+EXPORT_SYMBOL_GPL(usb_daq_clear_halt);
+
+/*
+ * Interpret the results of a URB transfer
+ *
+ * This function prints appropriate debugging messages, clears halts on
+ * non-control endpoints, and translates the status to the corresponding
+ * USB_DAQ_XFER_xxx return code.
+ */
+static int interpret_urb_result(struct us_data *us, unsigned int pipe,
+		unsigned int length, int result, unsigned int partial)
+{
+	my_printk("usb_daq: Status code %d; transferred %u/%u\n",
+		     result, partial, length);
+	switch (result) {
+
+	/* no error code; did we send all the data? */
+	case 0:
+		if (partial != length) {
+			my_printk("usb_daq: -- short transfer\n");
+			return USB_DAQ_XFER_SHORT;
+		}
+
+		my_printk("usb_daq: -- transfer complete\n");
+		return USB_DAQ_XFER_GOOD;
+
+	/* stalled */
+	case -EPIPE:
+		/* for control endpoints, (used by CB[I]) a stall indicates
+		 * a failed command */
+		if (usb_pipecontrol(pipe)) {
+			my_printk("usb_daq: -- stall on control pipe\n");
+			return USB_DAQ_XFER_STALLED;
+		}
+
+		/* for other sorts of endpoint, clear the stall */
+		my_printk("usb_daq: clearing endpoint halt for pipe 0x%x\n", pipe);
+		if (usb_daq_clear_halt(us, pipe) < 0)
+			return USB_DAQ_XFER_ERROR;
+		return USB_DAQ_XFER_STALLED;
+
+	/* babble - the device tried to send more than we wanted to read */
+	case -EOVERFLOW:
+		my_printk("usb_daq: -- babble\n");
+		return USB_DAQ_XFER_LONG;
+
+	/* the transfer was cancelled by abort, disconnect, or timeout */
+	case -ECONNRESET:
+		usb_stor_dbg(us, "-- transfer cancelled\n");
+		return USB_DAQ_XFER_ERROR;
+
+	/* short scatter-gather read transfer */
+	case -EREMOTEIO:
+		usb_stor_dbg(us, "-- short read transfer\n");
+		return USB_DAQ_XFER_SHORT;
+
+	/* abort or disconnect in progress */
+	case -EIO:
+		my_printk("usb_daq: -- abort or disconnect in progress\n");
+		return USB_DAQ_XFER_ERROR;
+
+	/* the catch-all error case */
+	default:
+		my_printk("usb_daq: -- unknown error\n");
+		return USB_DAQ_XFER_ERROR;
+	}
+}
+
+
+int usb_daq_bulk_transfer_buf(struct usb_daq_data *ud, unsigned int pipe,
+		void *buf, unsigned int length, unsigned int *act_len)
+{
+	int result;
+
+	my_printk("usb_daq: xfer %u bytes\n", length);
+
+	/* fill and submit the URB */
+	usb_fill_bulk_urb(ud->current_urb, ud->pusb_dev, pipe, buf, length,
+		      usb_stor_blocking_completion, NULL);
+	result = usb_stor_msg_common(ud, 0);
+
+	/* store the actual length of the data transferred */
+	if (act_len)
+		*act_len = ud->current_urb->actual_length;
+	return interpret_urb_result(ud, pipe, length, result,
+			ud->current_urb->actual_length);
+}
+EXPORT_SYMBOL_GPL(usb_daq_bulk_transfer_buf);
 
 /* Determine what the maximum LUN supported is */
 int usb_daq_get_dev_info(struct usb_daq_data *ud)
@@ -161,3 +269,4 @@ int usb_daq_get_dev_info(struct usb_daq_data *ud)
 
 	return 0;
 }
+EXPORT_SYMBOL_GPL(usb_daq_get_dev_info);

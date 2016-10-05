@@ -1,7 +1,7 @@
 /*
- * usb_transport.h
+ * usb_trans.h
  *
- *  Created on: 2016å¹?æœ?3æ—? *      Author: zhuce
+ *  Created on: 2016ï¿½?ï¿½?3ï¿½? *      Author: zhuce
  */
 
 #ifndef USB_TRANSPORT_H_
@@ -42,7 +42,7 @@
 extern int usb_daq_control_msg(struct usb_daq_data *ud, unsigned int pipe,
 		u8 request, u8 requesttype, u16 value, u16 index,
 		void *data, u16 size, int timeout);
-extern int usb_daq_clear_halt(struct usb_daq_data *us, unsigned int pipe);
+extern int usb_daq_clear_halt(struct usb_daq_data *ud, unsigned int pipe);
 extern int usb_daq_bulk_transfer_buf(struct usb_daq_data *ud, unsigned int pipe,
 		void *buf, unsigned int length, unsigned int *act_len);
 extern int usb_daq_get_dev_info(struct usb_daq_data *ud);

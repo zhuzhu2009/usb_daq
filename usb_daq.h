@@ -1,7 +1,7 @@
 /*
  * usb_daq.h
  *
- *  Created on: 2016å¹?æœ?æ—? *      Author: zhuce
+ *  Created on: 2016ï¿½?ï¿½?ï¿½? *      Author: zhuce
  */
 
 #ifndef USB_DAQ_H_
@@ -16,6 +16,7 @@
 #include <linux/uaccess.h>
 #include <linux/usb.h>
 #include <linux/mutex.h>
+#include <linux/types.h>	/* size_t */
 #include "my_printk.h"
 #include "blk_daq.h"
 
@@ -51,6 +52,8 @@ struct usb_daq_data;
  * size we'll allocate.
  */
 #define UD_IOBUF_SIZE		64	/* Size of the DMA-mapped I/O buffer */
+
+
 
 
 typedef int (*trans_blk_send)(struct usb_daq_data*);
@@ -107,5 +110,14 @@ struct usb_daq_data {
 
 #define to_usb_daq_dev(d) container_of(d, struct usb_daq_data, kref)
 
+/* Convert between us_data and the corresponding Scsi_Host */
+static inline struct blk_daq_dev *ud_to_bd(struct usb_daq_data *ud) {
+	return (&(ud->bd_dev));
+}
+static inline struct usb_daq_data *bd_to_ud(struct blk_daq_dev *bd) {
+	return container_of(bd, struct usb_daq_data, bd_dev);
+}
+
+#define bd_to_ud(bd) container_of(bd, struct usb_daq_data, bd_dev)
 
 #endif /* USB_DAQ_H_ */

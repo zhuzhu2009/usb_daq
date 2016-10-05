@@ -1,14 +1,14 @@
 /*
  * blk_daq.c
  *
- *  Created on: 2016å¹?æœ?æ—? *      Author: zhuce
+ *  Created on: 2016ï¿½?ï¿½?ï¿½? *      Author: zhuce
  */
 
 //#include "usb_daq.h"
 #include "blk_daq.h"
 #include <linux/idr.h>
 #include <linux/mutex.h>
-#include "usb_transport.h"
+#include "usb_trans.h"
 #include <linux/cdrom.h>
 
 
@@ -86,6 +86,7 @@ static int blk_daq_transfer(struct blk_daq_dev *dev, unsigned long sector,
 
 	if (write) {
 		if (atomic_read(&(dev->aWrite)) == 1) {
+			atomic_set(&(dev->aWrite), 0);
 			bdc->cmd_type = BLK_DAQ_CMD_EXTERNAL_WRITE;
 			result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
 									bdc, sizeof(*bdc), NULL);

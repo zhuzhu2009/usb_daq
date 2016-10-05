@@ -1,6 +1,6 @@
 ifneq ($(KERNELRELEASE),)
 #(module name)-objs
-qe_usb_daq-objs:=blk_daq.o usb_daq.o
+qe_usb_daq-objs:=usb_trans.o blk_daq.o usb_daq.o
 #qe=qinger, the driver name must be different from all file names
 obj-m:=qe_usb_daq.o
 

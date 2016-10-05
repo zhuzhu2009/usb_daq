@@ -15,7 +15,7 @@
  */
 
 #include "usb_daq.h"
-#include "usb_transport.h"
+#include "usb_trans.h"
 #include <linux/kthread.h>
 
 /* table of devices that work with this driver */
