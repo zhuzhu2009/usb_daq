@@ -4,6 +4,8 @@
  *  Created on: 2016�?�?�? *      Author: zhuce
  */
 
+//close,then open(umount, then mount), you will the self-write phenomenon!!!
+
 //#include "usb_daq.h"
 #include "blk_daq.h"
 #include <linux/idr.h>
@@ -81,14 +83,17 @@ static int blk_daq_transfer(struct blk_daq_dev *dev, unsigned long sector,
 	bdc->size = nbytes/ dev->hardsect_size;
 	unsigned int* pbt = (unsigned int*)buffer;
 
-	my_printk("usb_daq: cmd_type %u, sector %llu, size %llu\n",
-			bdc->cmd_type, bdc->sector, bdc->size);
-
 	if (write && atomic_read(&(dev->aWrite)) == 1)
 	{
-		atomic_set(&(dev->aWrite), 0);
-		bdc->cmd_type = BLK_DAQ_CMD_EXTERNAL_WRITE;
+		if (dev->ex_wr_size == nbytes) {
+			//my_printk("usb_daq: dev->ex_wr_size == nbytes\n");
+			atomic_set(&(dev->aWrite), 0);
+			bdc->cmd_type = BLK_DAQ_CMD_EXTERNAL_WRITE;
+		}
 	}
+
+	my_printk("usb_daq: cmd_type %u, sector %llu, size %llu\n",
+			bdc->cmd_type, bdc->sector, bdc->size);
 
 	result = usb_daq_bulk_transfer_buf(ud, ud->send_blk_bulk_pipe,
 										bdc, sizeof(*bdc), NULL);
