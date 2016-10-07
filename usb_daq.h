@@ -1,7 +1,8 @@
 /*
  * usb_daq.h
  *
- *  Created on: 2016�?�?�? *      Author: zhuce
+ *  Created on: 2015-9-8
+ *      Author: zhuce
  */
 
 #ifndef USB_DAQ_H_

@@ -1,7 +1,8 @@
 /*
  * blk_daq.c
  *
- *  Created on: 2016�?�?�? *      Author: zhuce
+ *  Created on: 2015-9-8
+ *      Author: zhuce
  */
 
 //close,then open(umount, then mount), you will the self-write phenomenon!!!

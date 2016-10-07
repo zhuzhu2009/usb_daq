@@ -1,17 +1,8 @@
 /*
- * usb_daq_data.c
+ * blk_daq.c
  *
  *  Created on: 2015-9-8
  *      Author: zhuce
- */
-
-/*
- * 生成驱动模块后使用insmod xxx.ko就可以插入到内核中运行了ﺿ * 用lsmod可以看到你插入到内核中的模块ﺿ * 也可以从系统中用命令rmmod xxx把模块卸载掉.
- * 如果把编译出来的驱动模块拷贝冿lib/modules/~/kernel/drivers/usb/下，
- * 然后depmod一下， 那么你在插入USB设备的时候，系统就会自动为你加载驱动模块瘿
- * 当然这个得有hotplug的支抿
- * 加载驱动模块成功后就会在/dev/下生成设备文件了ﺿ * 先挂载usbfs：mount -t usbfs none /proc/bus/usb
- * 如果用命令cat /proc/bus/usb/devices，我们可以看到驱动程序已经绑定到接口上了.
  */
 
 #include "usb_daq.h"

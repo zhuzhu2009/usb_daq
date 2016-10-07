@@ -8,7 +8,8 @@ EXTRA_LDFLAGS := --start-group
 
 else
 #KERNELDIR:=/lib/modules/$(shell uname -r)/build
-KERNELDIR:=/usr/src/linux-source-deepin-4.4
+#KERNELDIR:=/usr/src/linux-source-deepin-4.4
+KERNELDIR:=/usr/src/linux-source-4.4.0
 PWD:=$(shell pwd)
 #modules:
 #	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
